@@ -36,7 +36,7 @@ jobs:
     public: true
     plan:
       - get: usermgmt
-        trigger: true
+        #trigger: true
       - task: unit
         file: usermgmt/ci/tasks/unit.yml
 
@@ -44,7 +44,7 @@ jobs:
     public: true
     plan:
       - get: usermgmt
-        trigger: true
+        #trigger: true
       - task: unit
         file: usermgmt/ci/tasks/ui-unit.yml
 
@@ -52,7 +52,8 @@ jobs:
     public: true
     plan:
       - get: usermgmt
-      - task: e22
+        trigger: true
+      - task: e2e
         file: usermgmt/ci/tasks/e2e.yml
 #  - name: build-artifact
 #    serial_groups: [ version ]
