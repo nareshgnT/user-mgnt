@@ -1,0 +1,28 @@
+github-uri: https://github.com/nareshgnt/movie-fun-multi-datasource.git
+github-branch: two-data-sources
+github-token: 416db086062ce5981001bc3a4a12b4ddf081d6f4
+git-version-uri: https://github.com/nareshgnt/movie-fun-version.git
+git-user: nareshgn@gmail.com
+github-username: nareshgnt
+github-password: Tanish10$
+maven-opts: # -Xms256m -Xmx512m
+maven-config: # -s path/to/settings.xml
+cf-api: https://api.local.micropcf.io
+cf-username: admin
+cf-password: admin
+cf-org: micropcf-org
+cf-space: micropcf-space
+cf-manifest-host: pcfdemo-ci
+gcp-credential-json: |
+       {
+          "type": "service_account",
+          "project_id": "pcf-on-gcp-2010",
+          "private_key_id": "17e01f41a87addabef68999e2877a18f5d33168c",
+          "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCZbTbf8l+3m7PX\nm3nLSD5ve9sg3qMH1nD6sarde0qQBe1C+IQ0Nkr+gsKgtml79vSwS+6zJCl5/GrN\nGB8pqOyhMCNrhrdmMVJ/f0sQLLy78hUYJKoKyroTQGfZT02lfF2KWqkPO8JeLq/c\nxCVAG/+U/UjE3Bzp3hz64Wsw0mGmSZYfc7pKHQee1ZcPNB1kRET/KeS5dU0bIfIx\n5iNIsIhDqLRDbRTzr94mE1Zj50VqXkeuOEhf/nFwOB8Qf5+mc3E8ysxEp2LL+7g8\nXFh0WcpdbZ2xjz0hodjpAU6eCEeI/ttT6ZtnTx5XBhaZaSfrxI1I3npaXPkNhkid\nFNMOVfyRAgMBAAECggEAUDgUSv9VIJEedQrroWgCjRO7PPJrV3u90rX2WptOHwOa\nTDvYE9yXVX9U9+aoPJKg2VS6V5v+u7NIvDdyg7u5DYY33s6vMZV0RwltW+WoQLSQ\nZvE0nzPkGpDAO5UFShM+bUp9vmNGeyv583ny6BQ7i9DqrVNRIs5pZJtcCkjVmbVs\nr8iW1ax5gs/wweUsMfS1LxOi5fAkbdEWdYyXuIMHn5VL8E9eJwn/sI8mdAc1LQYs\np48vFrJR7aPwMAgRmgqddbNMp62jQf3GMv4560QrtIq/Hi0EHWIqQrG5wSrd1xWM\nTbVAtN8YrqkGmNFr2KIKtaS1AXIVOWKHzAjpp/xEAQKBgQDIt/XIVOPkS1sAgy8Z\nniRi2ZxpaQkn0FJJuEHixEFThb+VYYHp3bb2nRptpx1Be8AlihrbYyALbTB+NToX\nPPVi8zyZME8gpNKj3UJrRusSDYbTl3BgyROC6HtJ9ZoY98n93eZm9YrHlk4ZkAx3\nPP3DsFK31KtmWc1h+6e+5WZusQKBgQDDrthW1DEXI4jJPwJqByzI4apVsY1YCQpZ\nEar3ZfJ/7M5z71Ojh5bsvuBhwhxpPJMX+4isjTZP5eizKR37/K8GM44m7KRSHRyd\n2K434D3pkgBQFFJz+T1HVmy7rMYbi+gc7MY1daNs1rr3qJzrqHjLqQQsBqoJjdio\nmjgB4RSj4QKBgQCuSzgtbrG500nBhyjGORHlmIt+6Uue/AIIq+ziioMjkPfNMq/K\nMdIoEkIZx8zaySgQMP2jVk9EPNuoLHY2KaP3+bm8WDvN3/JdgsujNiD4OzDB2jYm\nhVThDxnIHnJijgEj5qWk8EFDkRxejDyW6ip93EXoBc+UgBSdqhZ+6Nrq8QKBgEXS\nJS8WF04CR9RGvz3FwZ0LqBNbfutijmapfy83GQe8Hw4O3vECeD+Q+87ly+1gx7tO\n7L1kxXRMvHLwwNoglvLHgnkxBpCmAofvwHn/cRfeGG56UdE/pTXHCJUOWMGLcg6g\nDTkV+HHlTGEBsLwFKNTCQdLTregqzJucK0/AV/UBAoGAOQSdNSduGyJS0AZ3JYst\nemISOTGPuFqa6/OV6yV6YKs7ouMkrw/wZYuKVyOWPJ7YTwMHtl2brg7XXF/V4PB2\nSwujXAON6x4A0CWStXP81JSl1/pXSQ9VBJ2SFjiytOdtIXWlL9LU7oPbfaZwECHi\ntwtIZcuNvBZfgD2uAKPqXBI=\n-----END PRIVATE KEY-----\n",
+          "client_email": "pcf-admin-acnt@pcf-on-gcp-2010.iam.gserviceaccount.com",
+          "client_id": "117173463182632833530",
+          "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+          "token_uri": "https://accounts.google.com/o/oauth2/token",
+          "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+          "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/pcf-admin-acnt%40pcf-on-gcp-2010.iam.gserviceaccount.com"
+        }

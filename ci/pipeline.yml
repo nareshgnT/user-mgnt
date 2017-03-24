@@ -1,0 +1,67 @@
+---
+#resource_types:
+#  - name: google-cloud-storage
+#    type: docker-image
+#    source:
+#      repository: frodenas/gcs-resource
+
+resources:
+  - name: usermgmt
+    type: git
+    source:
+      uri: {{github-uri}}
+      branch: {{github-branch}}
+
+#  - name: version
+#    type: semver
+#    source:
+#      driver: git
+#      initial_version: 0.0.1
+#      uri: {{git-version-uri}}
+#      branch: master
+#      file: version
+#      username: {{github-username}}
+#      password: {{github-password}}
+#      git_user: {{git-user}}
+
+#  - name: gcs-bucket
+#    type: google-cloud-storage
+#    source:
+#      bucket: bucket_artifacts
+#      regexp: releases/username-magnt-(.*).war
+#      json_key: {{gcp-credential-json}}
+
+jobs:
+  - name: unit-test
+    public: true
+    plan:
+      - get: usermgmt
+        trigger: true
+      - task: unit
+        file: usermgmt/ci/tasks/unit.yml
+
+
+#  - name: build-artifact
+#    serial_groups: [ version ]
+#    plan:
+#      - get: usermgmt
+#        passed: [ unit-test ]
+#        trigger: true
+#      - get: version
+#        params: { pre: rc }
+#      - task: build
+#        file: usermgmt/ci/tasks/build.yml
+#      - put: gcs-bucket
+#        params: { file: ./build/username-magnt-*.war }
+#      - put: version
+#        params: { file: version/number }
+
+groups:
+- name: development
+  jobs:
+  - unit-test
+#  - build-artifact
+- name: QA
+  jobs:
+  - unit-test
+

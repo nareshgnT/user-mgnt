@@ -1,0 +1,29 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: java
+    tag: '8'
+
+params:
+  MAVEN_OPTS:
+  MAVEN_CONFIG:
+
+inputs:
+  - name: usermgmt
+  - name: version
+
+outputs:
+  - name: build
+
+run:
+  path: usermgmt/ci/tasks/build.sh
+  args: [
+    --input-dir, usermgmt,
+    --output-dir, build,
+    --version-file, version/number,
+    --artifactId, usermgmt,
+    --packaging, war
+  ]
