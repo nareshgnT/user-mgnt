@@ -4,8 +4,7 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    repository: java
-    tag: '8'
+    repository: elgalu/selenium
 
 params:
   MAVEN_OPTS:
@@ -13,17 +12,13 @@ params:
 
 inputs:
   - name: usermgmt
-  - name: version
 
 outputs:
   - name: build
 
 run:
-  path: usermgmt/ci/tasks/build.sh
+  path: usermgmt/ci/tasks/e2e.sh
   args: [
     --input-dir, usermgmt,
     --output-dir, build,
-    --version-file, version/number,
-    --artifactId, usermgmt,
-    --packaging, war
   ]

@@ -32,7 +32,7 @@ npm install -g bower
 
 npm install
 
-bower install
+bower install --allow-root
 
 gulp test
 

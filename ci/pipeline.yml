@@ -48,6 +48,12 @@ jobs:
       - task: unit
         file: usermgmt/ci/tasks/ui-unit.yml
 
+  - name: e2e
+    public: true
+    plan:
+      - get: usermgmt
+      - task: e22
+        file: usermgmt/ci/tasks/e2e.yml
 #  - name: build-artifact
 #    serial_groups: [ version ]
 #    plan:
@@ -68,6 +74,7 @@ groups:
   jobs:
   - unit-test
   - ui-unit-test
+  - e2e
 #  - build-artifact
 - name: QA
   jobs:
