@@ -29,3 +29,12 @@ fi
 
 pwd
 
+env
+
+sudo su
+cd /home/seluser
+
+env
+
+
+
