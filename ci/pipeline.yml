@@ -40,6 +40,13 @@ jobs:
       - task: unit
         file: usermgmt/ci/tasks/unit.yml
 
+  - name: ui-unit-test
+    public: true
+    plan:
+      - get: usermgmt
+        trigger: true
+      - task: unit
+        file: usermgmt/ci/tasks/ui-unit.yml
 
 #  - name: build-artifact
 #    serial_groups: [ version ]
@@ -60,6 +67,7 @@ groups:
 - name: development
   jobs:
   - unit-test
+  - ui-unit-test
 #  - build-artifact
 - name: QA
   jobs:

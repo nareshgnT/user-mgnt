@@ -27,8 +27,17 @@ fi
 
 cd $inputDir
 
-./gradlew clean test
+npm install -g gulp
+npm install -g bower
 
-mkdir -p junit-report
+npm install
 
-mv build/reports/tests/test/* junit-report/
+bower install
+
+gulp test
+
+mkdir -p ui-unit-report
+
+mv build/test-results/coverage ui-junit-report/
+mv build/test-results/karma ui-junit-report/
+

@@ -4,8 +4,7 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    repository: java
-    tag: '8'
+    repository: node
 
 params:
   MAVEN_OPTS:
@@ -14,10 +13,8 @@ params:
 inputs:
   - name: usermgmt
 
-outputs:
-  - name: junit-report
 run:
-  path: usermgmt/ci/tasks/unit.sh
+  path: usermgmt/ci/tasks/ui-unit.sh
   args: [
     --input-dir, usermgmt
   ]
