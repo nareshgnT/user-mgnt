@@ -6,19 +6,12 @@ image_resource:
   source:
     repository: elgalu/selenium
 
-params:
-  MAVEN_OPTS:
-  MAVEN_CONFIG:
-
 inputs:
   - name: usermgmt
 
-outputs:
-  - name: build
 
 run:
   path: usermgmt/ci/tasks/e2e.sh
   args: [
-    --input-dir, usermgmt,
-    --output-dir, build,
+    --input-dir, usermgmt
   ]
