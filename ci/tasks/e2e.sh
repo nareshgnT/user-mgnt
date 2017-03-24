@@ -27,8 +27,5 @@ if [ ! -d "$inputDir" ]; then
   error_and_exit "missing input directory: $inputDir"
 fi
 
-ps -ef
+pwd
 
-netstat
-
-docker
