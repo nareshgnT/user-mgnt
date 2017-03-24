@@ -15,7 +15,7 @@ buildscript {
         classpath "net.ltgt.gradle:gradle-apt-plugin:0.9"
         classpath "org.springframework.boot:spring-boot-gradle-plugin:${spring_boot_version}"
         classpath "org.springframework.build.gradle:propdeps-plugin:0.0.7"
-        classpath "com.moowork.gradle:gradle-node-plugin:1.1.1"
+        //classpath "com.moowork.gradle:gradle-node-plugin:1.1.1"
         classpath "io.spring.gradle:dependency-management-plugin:0.6.1.RELEASE"
         //jhipster-needle-gradle-buildscript-dependency - JHipster will add additional gradle build script plugins here
     }
@@ -28,8 +28,8 @@ apply plugin: 'maven'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'war'
 apply plugin: 'propdeps'
-apply plugin: 'com.moowork.node'
-apply plugin: 'com.moowork.gulp'
+//apply plugin: 'com.moowork.node'
+//apply plugin: 'com.moowork.gulp'
 apply plugin: 'io.spring.dependency-management'
 defaultTasks 'bootRun'
 
@@ -75,13 +75,14 @@ if (OperatingSystem.current().isWindows()) {
 }
 
 test {
-    include '**/*UnitTest*'
+    //include '**/*UnitTest*'
     //include '**/*IntTest*'
+    exclude '**/Automation*'
 
     // uncomment if the tests reports are not generated
     // see https://github.com/jhipster/generator-jhipster/pull/2771 and https://github.com/jhipster/generator-jhipster/pull/4484
     // ignoreFailures true
-    reports.html.enabled = false
+    reports.html.enabled = true
 }
 
 task testReport(type: TestReport) {
@@ -89,11 +90,11 @@ task testReport(type: TestReport) {
     reportOn test
 }
 
-apply from: 'gradle/yeoman.gradle'
+//apply from: 'gradle/yeoman.gradle'
 apply from: 'gradle/sonar.gradle'
 apply from: 'gradle/liquibase.gradle'
 apply from: 'gradle/mapstruct.gradle'
-apply from: 'gradle/docker.gradle'
+//apply from: 'gradle/docker.gradle'
 //jhipster-needle-gradle-apply-from - JHipster will add additional gradle scripts to be applied here
 
 if (project.hasProperty('prod')) {
@@ -223,14 +224,14 @@ task wrapper(type: Wrapper) {
 task stage(dependsOn: 'bootRepackage') {
 }
 
-if (project.hasProperty('nodeInstall')) {
-    node {
-        version = "${node_version}"
-        npmVersion = "${npm_version}"
-        yarnVersion = "${yarn_version}"
-        download = true
-    }
-}
+//if (project.hasProperty('nodeInstall')) {
+//    node {
+//        version = "${node_version}"
+//        npmVersion = "${npm_version}"
+//        yarnVersion = "${yarn_version}"
+//        download = true
+//    }
+//}
 
 compileJava.dependsOn processResources
 processResources.dependsOn cleanResources,bootBuildInfo
