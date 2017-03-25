@@ -7,18 +7,14 @@ image_resource:
     repository: java
     tag: '8'
 
-params:
-  MAVEN_OPTS:
-  MAVEN_CONFIG:
-
 inputs:
   - name: usermgmt
 
 outputs:
-  - name: e2e-jar
+  - name: e2ejar
 run:
   path: usermgmt/ci/tasks/e2e-prepare.sh
   args: [
     --input-dir, usermgmt
-    --output-dir, e2e-jar
+    --output-dir, e2ejar
   ]
