@@ -11,10 +11,10 @@ inputs:
   - name: usermgmt
 
 outputs:
-  - name: e2ejar
+  - name: e2e-jar
 run:
   path: usermgmt/ci/tasks/e2e-prepare.sh
   args: [
-    --input-dir, usermgmt
-    --output-dir, e2ejar
+    --input-dir, usermgmt,
+    --output-dir, e2e-jar
   ]
