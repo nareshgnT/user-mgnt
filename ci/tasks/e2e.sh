@@ -53,6 +53,8 @@ ls -lrt
 
 cd ..
 
+whoami
+
 sudo mkdir -p e2e-jar-extract
 
 cd e2e-jar-extract
