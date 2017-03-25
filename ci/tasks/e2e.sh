@@ -53,19 +53,20 @@ ls -lrt
 
 cd ..
 
-mkdir -p e2e-jar-extract
+sudo mkdir -p e2e-jar-extract
 
-unzip -qq $inputDir/e2e.jar -d e2e-jar-extract
-echo "stating the process Done 5"
-supervisorctl -c /etc/supervisor/supervisord.conf start video-rec
-echo "stating the process Done 6"
-java -cp "$inputDir/e2e.jar:e2e-jar-extract/libs/*:" org.junit.runner.JUnitCore com.naresh.uiapps.web.Automation
-echo "stating the process Done 7"
-supervisorctl -c /etc/supervisor/supervisord.conf stop video-rec
-
-echo "stating the process Done 8 $VIDEO_PATH"
-mkdir -p $outputDir
-
-cp $VIDEO_PATH $outputDir/
+cd e2e-jar-extract
+#unzip -qq $inputDir/e2e.jar -d e2e-jar-extract
+#echo "stating the process Done 5"
+#supervisorctl -c /etc/supervisor/supervisord.conf start video-rec
+#echo "stating the process Done 6"
+#java -cp "$inputDir/e2e.jar:e2e-jar-extract/libs/*:" org.junit.runner.JUnitCore com.naresh.uiapps.web.Automation
+#echo "stating the process Done 7"
+#supervisorctl -c /etc/supervisor/supervisord.conf stop video-rec
+#
+#echo "stating the process Done 8 $VIDEO_PATH"
+#mkdir -p $outputDir
+#
+#cp $VIDEO_PATH $outputDir/
 
 
