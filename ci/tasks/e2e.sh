@@ -55,7 +55,11 @@ cd ..
 
 whoami
 
-sudo mkdir -p e2e-jar-extract
+su
+
+whoami
+
+mkdir -p e2e-jar-extract
 
 cd e2e-jar-extract
 #unzip -qq $inputDir/e2e.jar -d e2e-jar-extract
