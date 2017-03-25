@@ -1,7 +1,5 @@
 #!/bin/sh
 
-set -e
-
 inputDir=  outputDir=
 
 while [ $# -gt 0 ]; do
@@ -14,7 +12,6 @@ while [ $# -gt 0 ]; do
       outputDir=$2
       shift
       ;;
-
     * )
       echo "Unrecognized option: $1" 1>&2
       exit 1
@@ -31,20 +28,17 @@ error_and_exit() {
 if [ ! -d "$inputDir" ]; then
   error_and_exit "missing input directory: $inputDir"
 fi
-
 if [ ! -d "$outputDir" ]; then
   error_and_exit "missing output directory: $outputDir"
 fi
 
-pwd
+cd $inputDir
 
-env
+./gradlew clean e2eJar
 
-unzip -qq $inputDir/e2e.jar -d e2e-jar-extract
-supervisorctl -c /etc/supervisor/supervisord.conf start video-rec
-java -cp "$inputDir/e2e.jar:e2e-jar-extract/libs/*:" org.junit.runner.JUnitCore com.naresh.uiapps.web.Automation
-supervisorctl -c /etc/supervisor/supervisord.conf stop video-rec
+cd..
 
-cp $VIDEO_PATH $outputDir/
+mkdir -p $outputDir
 
 
+cp build/libs/*.jar $outputDir/e2e.jar

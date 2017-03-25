@@ -7,11 +7,14 @@ image_resource:
     repository: elgalu/selenium
 
 inputs:
-  - name: usermgmt
+  - name: e2e-jar
 
+outputs:
+  - name: e2e-video
 
 run:
   path: usermgmt/ci/tasks/e2e.sh
   args: [
     --input-dir, usermgmt
+    --output-dir, e2e-video
   ]

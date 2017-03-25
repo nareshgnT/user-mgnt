@@ -74,6 +74,7 @@ if (OperatingSystem.current().isWindows()) {
     }
 }
 
+
 test {
     //include '**/*UnitTest*'
     //include '**/*IntTest*'
@@ -85,8 +86,24 @@ test {
     reports.html.enabled = true
 }
 
+
+task e2eJar(type: Jar){
+
+    into('libs'){
+        from configurations.compile
+    }
+
+    from sourceSets.test.runtimeClasspath
+        manifest {
+            attributes 'Implementation-Title': 'myApp',
+                'Implementation-Version': 1.0,
+                'Main-Class': 'com.naresh.uiapps.web.Automation'
+        }
+}
+
 task testReport(type: TestReport) {
     destinationDir = file("$buildDir/reports/tests")
+
     reportOn test
 }
 

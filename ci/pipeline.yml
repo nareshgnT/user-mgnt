@@ -47,14 +47,17 @@ jobs:
         #trigger: true
       - task: unit
         file: usermgmt/ci/tasks/ui-unit.yml
-
-  - name: e2e
+  - name: e2e-prepare-and-run
     public: true
     plan:
       - get: usermgmt
-        trigger: true
-      - task: e2e
+        #trigger: true
+      - task: e2e-prepare
+        file: usermgmt/ci/tasks/e2e-prepare.yml
+      - task: e2e-run
         file: usermgmt/ci/tasks/e2e.yml
+
+
 #  - name: build-artifact
 #    serial_groups: [ version ]
 #    plan:
@@ -75,7 +78,7 @@ groups:
   jobs:
   - unit-test
   - ui-unit-test
-  - e2e
+  - e2e-prepare-and-run
 #  - build-artifact
 - name: QA
   jobs:
