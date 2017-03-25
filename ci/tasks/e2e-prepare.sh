@@ -36,7 +36,7 @@ cd $inputDir
 
 ./gradlew clean e2eJar
 
-cd..
+cd ..
 
 mkdir -p $outputDir
 
