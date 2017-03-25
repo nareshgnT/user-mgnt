@@ -46,7 +46,12 @@ pwd
 
 env
 
-echo "stating the process Done 4"
+echo "stating the process Done 4 $inputDir"
+
+cd $inputDir
+ls -lrt
+
+cd ..
 
 unzip -qq $inputDir/e2e.jar -d e2e-jar-extract
 echo "stating the process Done 5"

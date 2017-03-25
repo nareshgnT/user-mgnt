@@ -45,3 +45,7 @@ mkdir -p $outputDir
 
 
 cp $inputDir/build/libs/*.jar $outputDir/e2e.jar
+
+cd $outputDir
+
+ls -lrt
