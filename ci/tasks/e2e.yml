@@ -8,6 +8,7 @@ image_resource:
 
 inputs:
   - name: e2e-jar
+  - name: usermgmt
 
 outputs:
   - name: e2e-video
