@@ -1,5 +1,8 @@
 #!/bin/sh
 
+set -x
+set -e
+
 inputDir=  outputDir=
 
 while [ $# -gt 0 ]; do
@@ -41,4 +44,4 @@ cd ..
 mkdir -p $outputDir
 
 
-cp build/libs/*.jar $outputDir/e2e.jar
+cp $inputDir/build/libs/*.jar $outputDir/e2e.jar
