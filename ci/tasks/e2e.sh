@@ -53,6 +53,8 @@ ls -lrt
 
 cd ..
 
+mkdir -p e2e-jar-extract
+
 unzip -qq $inputDir/e2e.jar -d e2e-jar-extract
 echo "stating the process Done 5"
 supervisorctl -c /etc/supervisor/supervisord.conf start video-rec
