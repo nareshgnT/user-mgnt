@@ -55,9 +55,6 @@ cd ..
 
 whoami
 
-su
-
-whoami
 
 mkdir -p $VIDEOS_DIR/e2e-jar
 
