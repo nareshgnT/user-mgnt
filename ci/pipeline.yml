@@ -52,8 +52,8 @@ jobs:
     plan:
       - get: usermgmt
         #trigger: true
-#      - task: e2e-prepare
-#        file: usermgmt/ci/tasks/e2e-prepare.yml
+      - task: e2e-prepare
+        file: usermgmt/ci/tasks/e2e-prepare.yml
       - task: e2e-run
         file: usermgmt/ci/tasks/e2e.yml
 

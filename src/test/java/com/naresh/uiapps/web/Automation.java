@@ -34,7 +34,7 @@ public class Automation {
     public void test1() throws Exception {
         driver.get(baseUrl + "/#/");
         //driver.findElement(By.cssSelector("span > span.hidden-sm")).click();
-        driver.findElement(By.xpath("//a[@id='login']")).click();
+        /*driver.findElement(By.xpath("//a[@id='login']")).click();
         driver.findElement(By.xpath("//a[@id='login']/span[2]")).click();
         driver.findElement(By.id("username")).clear();
         driver.findElement(By.id("username")).sendKeys("admin");
@@ -58,7 +58,7 @@ public class Automation {
         driver.findElement(By.cssSelector("#admin-menu > span > span.hidden-sm")).click();
         driver.findElement(By.xpath("//li[7]/a/span[2]")).click();
         driver.findElement(By.id("endpointListTogger_account-resource")).click();
-        driver.findElement(By.linkText("get")).click();
+        driver.findElement(By.linkText("get")).click();*/
     }
 
     @After

@@ -59,10 +59,40 @@ su
 
 whoami
 
-mkdir -p e2e-jar-extract
+mkdir -p $VIDEOS_DIR/e2e-jar
 
-cd e2e-jar-extract
-#unzip -qq $inputDir/e2e.jar -d e2e-jar-extract
+echo "stating the process Done 6"
+
+mkdir -p $VIDEOS_DIR/e2e-jar-extract
+
+echo "stating the process Done 7"
+
+cp $inputDir/e2e.jar $VIDEOS_DIR/e2e-jar
+
+echo "stating the process Done 8"
+
+
+unzip -qqo $VIDEOS_DIR/e2e-jar/e2e.jar -d $VIDEOS_DIR/e2e-jar-extract/
+
+echo "stating the process Done 9"
+
+supervisorctl -c /etc/supervisor/supervisord.conf start video-rec
+
+echo "stating the process Done 10 video started"
+
+java -cp "$VIDEOS_DIR/e2e-jar/e2e.jar:$VIDEOS_DIR/e2e-jar-extract/libs/*:" org.junit.runner.JUnitCore com.naresh.uiapps.web.Automation
+
+echo "stating the process Done 11"
+
+supervisorctl -c /etc/supervisor/supervisord.conf stop video-rec
+
+echo "stating the process Done 12 video stopped"
+
+cd $VIDEOS_DIR
+
+ls -lrt
+
+echo "stating the process Done 13 DONE"
 #echo "stating the process Done 5"
 #supervisorctl -c /etc/supervisor/supervisord.conf start video-rec
 #echo "stating the process Done 6"
